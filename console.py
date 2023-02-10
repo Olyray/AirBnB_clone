@@ -45,10 +45,11 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
             elif len(commands) < 2:
                 print("** instance id missing **")
-            elif the_dict["{}.{}".format(commands[0], commands[1])]:
-                print(the_dict["{}.{}".format(commands[0], commands[1])])
             else:
-                print("** no instance found **")
+                try:
+                    print(the_dict["{}.{}".format(commands[0], commands[1])])
+                except KeyError:
+                    
         else:
             print("** class name missing **")
 
