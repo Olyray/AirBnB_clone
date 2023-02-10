@@ -3,6 +3,8 @@
 console module
 """
 import cmd
+from models import storage
+from models.base_model import BaseModel
 
 
 class HBNBCommand(cmd.Cmd):
@@ -14,6 +16,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, line):
         line = BaseModel()
+        line.save()
 
     def do_EOF(self, line):
         """ handles EOF """
