@@ -42,6 +42,7 @@ class HBNBCommand(cmd.Cmd):
             commands = line.split()
             if commands[0] != "BaseModel":
                 print("** class doesn't exist **")
+            elif 
 
         else:
             print("** class name missing **")
