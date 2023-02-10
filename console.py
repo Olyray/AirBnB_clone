@@ -15,8 +15,12 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb)"
 
     def do_create(self, line):
-        line = BaseModel()
-        line.save()
+        if line:
+            if line != "BaseModel"
+            new_instance = BaseModel()
+            new_instance.save()
+        else:
+
 
     def do_EOF(self, line):
         """ handles EOF """
