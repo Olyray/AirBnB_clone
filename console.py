@@ -41,6 +41,7 @@ class HBNBCommand(cmd.Cmd):
         the_dict = storage.all()
         if line:
             commands = line.split()
+            
             if commands[0] != "BaseModel":
                 print("** class doesn't exist **")
             elif len(commands) < 2:
