@@ -38,7 +38,12 @@ class FileStorage:
         (__file_path) exists ; otherwise, do nothing.
         If the file doesn’t exist, no exception should be raised)
         """
-        if not os.path.isfile(FileStorage.__file_path):
-            return
-        with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
-           json.load(f)
+        try:
+            with open(self.__file_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                from models.base_model import BaseModel
+                for value in data.values():
+                    self.new(eval(value['__class__'])(**value))
+
+        except Exception:
+            pass
