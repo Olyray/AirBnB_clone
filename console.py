@@ -19,7 +19,7 @@ class HBNBCommand(cmd.Cmd):
         Creates a new instance of BaseModel, saves it (to the JSON file) and prints the id
         """
         if line:
-            if line == "BaseModel"
+            if line == "BaseModel":
                 new_instance = BaseModel()
                 new_instance.save()
                 print("{}".format(new_instance.id))
