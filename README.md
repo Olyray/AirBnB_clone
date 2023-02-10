@@ -1,5 +1,5 @@
 # AirBnB Clone
 
-### Description
+## Description
 
 Clone of AirBnB platform with limited features
