@@ -16,7 +16,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, line):
         """
-        Creates a new instance of BaseModel, saves it (to the JSON file) and prints the id
+        Creates a new instance of BaseModel,
+        saves it (to the JSON file) and prints the id
         """
         if line:
             if line == "BaseModel":
@@ -30,7 +31,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, line):
         """
-         Prints the string representation of an instance based on the class name and id.
+        Prints the string representation of an instance based on the class name and id.
         """
         #Call storage.all to access the persistent dict representation
         the_dict = storage.all()
