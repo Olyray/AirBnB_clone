@@ -41,12 +41,11 @@ class HBNBCommand(cmd.Cmd):
         the_dict = storage.all()
         if line:
             commands = line.split()
-            if len(commands) == 2:
-                
             if commands[0] != "BaseModel":
                 print("** class doesn't exist **")
             elif len(commands) < 2:
                 print("** instance id missing **")
+            elif the_dict["{}.{}".format(commands[0], commands[1])]
 
 
         else:
