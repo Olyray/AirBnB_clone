@@ -15,12 +15,16 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb)"
 
     def do_create(self, line):
-        if line:
-            if line != "BaseModel"
-            new_instance = BaseModel()
-            new_instance.save()
-        else:
 
+        if line:
+            if line == "BaseModel"
+                new_instance = BaseModel()
+                new_instance.save()
+                print()
+            else:
+                print("** class doesn't exist **")
+        else:
+                print("** class name missing **")
 
     def do_EOF(self, line):
         """ handles EOF """
