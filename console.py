@@ -46,7 +46,7 @@ class HBNBCommand(cmd.Cmd):
             elif len(commands) < 2:
                 print("** instance id missing **")
             elif the_dict["{}.{}".format(commands[0], commands[1])]:
-                print ()
+                print("{}".format())
 
 
         else:
