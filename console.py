@@ -15,12 +15,14 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb)"
 
     def do_create(self, line):
-
+        """
+        Creates a new instance of BaseModel, saves it (to the JSON file) and prints the id
+        """
         if line:
             if line == "BaseModel"
                 new_instance = BaseModel()
                 new_instance.save()
-                print()
+                print("{}".format(new_instance.id))
             else:
                 print("** class doesn't exist **")
         else:
