@@ -49,6 +49,8 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** class name missing **")
 
+    
+
     def do_EOF(self, line):
         """ handles EOF """
         return True
