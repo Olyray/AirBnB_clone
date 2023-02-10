@@ -34,26 +34,19 @@ class HBNBCommand(cmd.Cmd):
         Prints the string representation of an instance based
         on the class name and id.
         """
-        #Call storage.all to access the persistent dict representation
         the_dict = storage.all()
-        #if there is a command after "show"
         if line:
-            #split the line into its constituent parts
-            commands = line.split()
-            #Check that the right class is called
-            if commands[0] != "BaseModel":
+            commands = line.split()  # split the line into its constituent parts
+            if commands[0] != "BaseModel":  # Check that the right class is called
                 print("** class doesn't exist **")
-            #Check for an instance id.
-            elif len(commands) < 2:
+            elif len(commands) < 2:  # Check for an instance id.
                 print("** instance id missing **")
             else:
-                #print the string representation if it's available
-                try:
+                try:  # print the string representation if it's available
                     print(the_dict["{}.{}".format(commands[0], commands[1])])
                 except KeyError:
                     print("** no instance found **")
-        else:
-            #print the appropriate error message
+        else:  # print the appropriate error message
             print("** class name missing **")
 
     def do_EOF(self, line):
