@@ -3,6 +3,7 @@
 console module
 """
 import cmd
+import ast
 from models import storage
 from models.base_model import BaseModel
 
@@ -51,8 +52,9 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, line):
         """
-		destroy: Deletes an instance based on the class name and id 
-        (save the change into the JSON file). Ex: $ destroy BaseModel 1234-1234-1234.
+        destroy: Deletes an instance based on the class name and id
+        (save the change into the JSON file).
+        Ex: $ destroy BaseModel 1234-1234-1234.
         """
         the_dict = storage.all()
         if line:
@@ -69,15 +71,14 @@ class HBNBCommand(cmd.Cmd):
                     print("** no instance found **")
         else:
             print("** class name missing **")
-    
+
     def do_all(self, line):
         """
-		Prints all string representation of all instances based or not on the class name. Ex: $ all BaseModel or $ all.
-
-			The printed result must be a list of strings (like the example below)
-			If the class name doesn’t exist, print ** class doesn't exist ** (ex: $ all MyModel)
+        Prints all string representation of all
+        instances based or not on the class name.
+        Ex: $ all BaseModel or $ all.
         """
-        if line == "BaseModel" or line is None:
+        if line == "BaseModel" or line == "":
             all_objs = storage.all()
             for obj_id in all_objs.keys():
                 obj = all_objs[obj_id]
@@ -85,8 +86,40 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** class doesn't exist **")
 
+    def do_update(self, line):
+        """
+        Updates an instance based on the class name
+        and id by adding or updating attribute
+        (save the change into the JSON file).
+        Ex: $ update BaseModel 1234-1234-1234 email "aibnb@mail.com".
+        """
+        the_dict = storage.all()
+        if line:
+            commands = line.split()
+            if commands[0] != "BaseModel":
+                print("** class doesn't exist **")
+            elif len(commands) < 2:
+                print("** instance id missing **")
+            elif commands[0] + "." + commands[1] not in the_dict:
+                print("** no instance found **")
+            elif len(commands) < 3:
+                print("** attribute name missing **")
+            elif len(commands) < 4:
+                print("** value missing **")
+            elif len(commands) > 4:
+                commands = commands[:4]
+            else:
+                setattr(
+                    the_dict[commands[0] + "." + commands[1]],
+                    commands[2],
+                    ast.literal_eval(commands[3]),
+                )
+                storage.save()
+        else:
+            print("** class name missing **")
+
     def do_EOF(self, line):
-        """ handles EOF """
+        """handles EOF"""
         return True
 
     def do_quit(self, line):
@@ -96,9 +129,9 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def emptyline(self):
-        """ empty line """
+        """empty line"""
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     HBNBCommand().cmdloop()
