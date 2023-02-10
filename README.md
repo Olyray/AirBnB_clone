@@ -1,1 +1,5 @@
-This is the README for the AirBnB clone project.
+# AirBnB Clone
+
+### Description
+
+Clone of AirBnB platform with limited features
