@@ -28,6 +28,8 @@ class HBNBCommand(cmd.Cmd):
         else:
                 print("** class name missing **")
 
+    def do_show
+
     def do_EOF(self, line):
         """ handles EOF """
         return True
