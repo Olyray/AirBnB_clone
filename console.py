@@ -12,6 +12,9 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb)"
 
+    def do_create(self, line):
+        line = BaseModel()
+
     def do_EOF(self, line):
         """ handles EOF """
         return True
