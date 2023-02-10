@@ -38,11 +38,14 @@ class HBNBCommand(cmd.Cmd):
             If the instance of the class name doesn’t exist for the id, print ** no instance found ** (ex: $ show BaseModel 121212)
 
         """
+        the_dict = storage.all()
         if line:
             commands = line.split()
             if commands[0] != "BaseModel":
                 print("** class doesn't exist **")
-            elif 
+            elif len(commands) < 2:
+                print("** instance id missing **")
+
 
         else:
             print("** class name missing **")
