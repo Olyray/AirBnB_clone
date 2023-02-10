@@ -27,11 +27,12 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("** class doesn't exist **")
         else:
-                print("** class name missing **")
+            print("** class name missing **")
 
     def do_show(self, line):
         """
-        Prints the string representation of an instance based on the class name and id.
+        Prints the string representation of an instance based
+        on the class name and id.
         """
         #Call storage.all to access the persistent dict representation
         the_dict = storage.all()
