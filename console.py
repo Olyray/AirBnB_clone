@@ -36,17 +36,17 @@ class HBNBCommand(cmd.Cmd):
         """
         the_dict = storage.all()
         if line:
-            commands = line.split()  # split the line into its constituent parts
-            if commands[0] != "BaseModel":  # Check that the right class is called
+            commands = line.split()
+            if commands[0] != "BaseModel":  # Check tha
                 print("** class doesn't exist **")
-            elif len(commands) < 2:  # Check for an instance id.
+            elif len(commands) < 2:  
                 print("** instance id missing **")
             else:
-                try:  # print the string representation if it's available
+                try:  # print the string repre
                     print(the_dict["{}.{}".format(commands[0], commands[1])])
                 except KeyError:
                     print("** no instance found **")
-        else:  # print the appropriate error message
+        else:  # print th
             print("** class name missing **")
 
     def do_EOF(self, line):
