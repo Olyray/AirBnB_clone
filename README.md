@@ -10,3 +10,14 @@ Clone of AirBnB platform with limited features
 ```
 ./console
 ```
+
+### How to display help
+```
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF help quit
+
+(hbnb)
+```
