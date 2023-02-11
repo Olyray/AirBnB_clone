@@ -8,4 +8,6 @@ Clone of AirBnB platform with limited features
 
 ### How to start it
 
-Markup : ./console.py
+'''
+./console
+'''
