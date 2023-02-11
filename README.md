@@ -8,4 +8,8 @@ Clone of AirBnB platform with limited features
 
 ### How to start it
 
-'./console'
+'''
+{
+./console
+}
+'''
