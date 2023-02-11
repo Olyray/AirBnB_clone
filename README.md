@@ -17,7 +17,7 @@ Clone of AirBnB platform with limited features
 
 Documented commands (type help <topic>):
 ========================================
-EOF help quit
+EOF help all create update show quit destroy
 
 (hbnb)
 ```
