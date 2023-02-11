@@ -29,3 +29,9 @@ Quit command to exit the program
 
 (hbnb)
 ```
+
+### How to exit the console
+```
+(hbnb) quit
+$
+```
