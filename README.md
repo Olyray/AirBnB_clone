@@ -41,3 +41,4 @@ $
 (hbnb) create user
 38a22b25-ae9c-4fa9-9f94-59b3eb51bfba
 (hbnb)
+```
