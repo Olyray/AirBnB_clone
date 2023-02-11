@@ -21,3 +21,11 @@ EOF help quit
 
 (hbnb)
 ```
+
+### How to display help for quit command
+```
+(hbnb) help quit
+Quit command to exit the program
+
+(hbnb)
+```
