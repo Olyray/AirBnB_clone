@@ -1,7 +1,4 @@
-"""
-To create a unique FileStorage
-instance for your application
-"""
+""" Create FileStorage """
 from models.engine.file_storage import FileStorage
 
 
