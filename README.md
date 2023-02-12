@@ -77,3 +77,10 @@ a42ee380-c959-450e-ad29-c840a898cfce
 2bf3ebfd-a220-49ee-9ae6-b01c75f6f6a4
 (hbnb)
 ```
+
+### How to display a User
+```
+(hbnb) show User 38a22b25-ae9c-4fa9-9f94-59b3eb51bfba
+[User] (38a22b25-ae9c-4fa9-9f94-59b3eb51bfba) {'id': '38a22b25-ae9c-4fa9-9f94-59b3eb51bfba', 'created_at': datetime.datetime(2017, 9, 28, 21, 11, 42, 848279), 'updated_at': datetime.datetime(2017, 9, 28, 21, 11, 42, 848291)}
+(hbnb)
+```
