@@ -14,10 +14,10 @@ class TestFileStorage(TestCase):
         """ test pep """
         style = pycodestyle.StyleGuide(quiet=True)
         files = ['models/engine/file_storage',
-            'test/test_models/test_engine/test_file_storage']
+                 'test/test_models/test_engine/test_file_storage']
         result = style.check_files(files)
         self.assertEqual(result.total_errors, 0,
-            "Found code style errors (and warning).")
+                         "Found code style errors (and warning).")
 
     def test_module_doc(self):
         """
