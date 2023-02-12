@@ -6,13 +6,28 @@ from datetime import datetime
 
 
 class TestBaseModel(unittest.TestCase):
-    """ Things to test:
-        1. Check whether ID is a string
-        2. Whether ID is unique
-        3. Check whether created_at and updated_at are datetime
-        4. Check that str prints in correct format
-        5. Check that they are strings
     """
+    TestBaseModel class
+    """
+    def test_pep(self):
+        """ test pep """
+        style = pycodestyle.StyleGuide(quiet=True)
+        files = ['models/base_models',
+                 'test/test_models/test_base_model']
+        result = style.check_files(files)
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warnings).)")
+
+    def test_module_doc(self):
+        """ test module documentation """
+        doc = __import__('models.base_model').__doc__
+        self.assertGreater(len(doc), 1)
+
+    def test_class_doc(self):
+        """ test class documentation """
+        doc = BaseModel.__doc__
+        self.assertGreater(len(doc), 1)
+
     def test_id_string(self):
         """
         Check whether ID is a string
