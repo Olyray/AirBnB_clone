@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ test_base_model module """
 import unittest
+import pycodestyle
 from models.base_model import BaseModel
 from datetime import datetime
 

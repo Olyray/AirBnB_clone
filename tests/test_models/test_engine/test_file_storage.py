@@ -23,7 +23,7 @@ class TestFileStorage(TestCase):
         """
         test module documentation
         """
-        doc = __import__('models/engine/file_storage').__doc__
+        doc = __import__('models/engine/file_storage.py').__doc__
         self.assertGreater(len(doc), 1)
 
     def test_class_doc(self):
