@@ -4,7 +4,6 @@ base_model module
 """
 from datetime import datetime
 from uuid import uuid4
-from models import storage
 
 
 class BaseModel:
@@ -21,6 +20,7 @@ class BaseModel:
                     else:
                         setattr(self, key, value)
         else:
+            from models import storage
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
@@ -34,6 +34,7 @@ class BaseModel:
     def save(self):
         """ updates the public instance attribute
         update_at with the current datetime """
+        from models import storage
         self.updated_at = datetime.now()
         storage.save()
 
