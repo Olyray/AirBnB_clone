@@ -7,10 +7,20 @@ import ast
 from models import storage
 from models.base_model import BaseModel
 from models.user import User
+from models.place import Place
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.review import Review
 
 CLASSES = [
         "BaseModel",
-        "User"
+        "User",
+        "Place",
+        "State",
+        "City",
+        "Amenity",
+        "Review"
 ]
 
 
@@ -33,6 +43,26 @@ class HBNBCommand(cmd.Cmd):
                 print("{}".format(new_instance.id))
             elif line == "User":
                 new_instance = User()
+                new_instance.save()
+                print("{}".format(new_instance.id))
+            elif line == "Place":
+                new_instance = Place()
+                new_instance.save()
+                print("{}".format(new_instance.id))
+            elif line == "State":
+                new_instance = State()
+                new_instance.save()
+                print("{}".format(new_instance.id))
+            elif line == "City":
+                new_instance = City()
+                new_instance.save()
+                print("{}".format(new_instance.id))
+            elif line == "Amenity":
+                new_instance = Amenity()
+                new_instance.save()
+                print("{}".format(new_instance.id))
+            elif line == "Review":
+                new_instance = Review()
                 new_instance.save()
                 print("{}".format(new_instance.id))
             else:
@@ -102,6 +132,31 @@ class HBNBCommand(cmd.Cmd):
             all_objs = storage.all()
             for obj_id in all_objs.keys():
                 if "User" in obj_id:
+                    print(all_objs[obj_id])
+        elif line == "Place":
+            all_objs = storage.all()
+            for obj_id in all_objs.keys():
+                if "Place" in obj_id:
+                    print(all_objs[obj_id])
+        elif line == "State":
+            all_objs = storage.all()
+            for obj_id in all_objs.keys():
+                if "State" in obj_id:
+                    print(all_objs[obj_id])
+        elif line == "City":
+            all_objs = storage.all()
+            for obj_id in all_objs.keys():
+                if "City" in obj_id:
+                    print(all_objs[obj_id])
+        elif line == "Amenity":
+            all_objs = storage.all()
+            for obj_id in all_objs.keys():
+                if "Amenity" in obj_id:
+                    print(all_objs[obj_id])
+        elif line == "Review":
+            all_objs = storage.all()
+            for obj_id in all_objs.keys():
+                if "Review" in obj_id:
                     print(all_objs[obj_id])
         else:
             print("** class doesn't exist **")
