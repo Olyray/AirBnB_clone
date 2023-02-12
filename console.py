@@ -8,6 +8,11 @@ from models import storage
 from models.base_model import BaseModel
 from models.user import User
 
+CLASSES = [
+        "BaseModel",
+        "User"
+]
+
 
 class HBNBCommand(cmd.Cmd):
     """
@@ -26,6 +31,10 @@ class HBNBCommand(cmd.Cmd):
                 new_instance = BaseModel()
                 new_instance.save()
                 print("{}".format(new_instance.id))
+            elif line == "User":
+                new_instance = User()
+                new_instance.save()
+                print("{}".format(new_instance.id))
             else:
                 print("** class doesn't exist **")
         else:
@@ -39,7 +48,7 @@ class HBNBCommand(cmd.Cmd):
         the_dict = storage.all()
         if line:
             commands = line.split()
-            if commands[0] != "BaseModel":
+            if commands[0] not in CLASSES:
                 print("** class doesn't exist **")
             elif len(commands) < 2:
                 print("** instance id missing **")
@@ -60,7 +69,7 @@ class HBNBCommand(cmd.Cmd):
         the_dict = storage.all()
         if line:
             commands = line.split()
-            if commands[0] != "BaseModel":
+            if commands[0] not in CLASSES:
                 print("** class doesn't exist **")
             elif len(commands) < 2:
                 print("** instance id missing **")
@@ -79,11 +88,21 @@ class HBNBCommand(cmd.Cmd):
         instances based or not on the class name.
         Ex: $ all BaseModel or $ all.
         """
-        if line == "BaseModel" or line == "":
+        if line == "":
             all_objs = storage.all()
             for obj_id in all_objs.keys():
                 obj = all_objs[obj_id]
                 print(obj)
+        elif line == "BaseModel":
+            all_objs = storage.all()
+            for obj_id in all_objs.keys():
+                if "BaseModel" in obj_id:
+                    print(all_objs[obj_id])
+        elif line == "User":
+            all_objs = storage.all()
+            for obj_id in all_objs.keys():
+                if "User" in obj_id:
+                    print(all_objs[obj_id])
         else:
             print("** class doesn't exist **")
 
@@ -97,7 +116,7 @@ class HBNBCommand(cmd.Cmd):
         the_dict = storage.all()
         if line:
             commands = line.split()
-            if commands[0] != "BaseModel":
+            if commands[0] not in CLASSES:
                 print("** class doesn't exist **")
             elif len(commands) < 2:
                 print("** instance id missing **")
