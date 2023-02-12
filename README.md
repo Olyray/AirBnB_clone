@@ -171,6 +171,6 @@ a42ee380-c959-450e-ad29-c840a898cfce
 ### How to count number of Users
 ```
 (hbnb) count User
-1
+4
 (hbnb)
 ```
