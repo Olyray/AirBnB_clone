@@ -36,11 +36,13 @@
     width: 25%;
 }
 
-h3{
+.locations h3, .amenities h3{
     font-weight: 600;
+    margin: 15px 40px 2px;
 }
 
-h4{
+.locations h4, .amenities h4{
     font-weight: 400;
     font-size: 14px;
+    margin: 2px 40px;
 }
