@@ -54,6 +54,10 @@
     border: 1px solid  #DDDDDD;
 }
 
+.popover li{
+    list-style: none;
+}
+
 .popover h2{
     font-size: 16px;
 }
