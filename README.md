@@ -2,7 +2,7 @@
 
 ## Description
 
-Modif
+Modifying
 Clone of AirBnB platform with limited features
 
 ## Usage
